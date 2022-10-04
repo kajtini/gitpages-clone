@@ -1,0 +1,352 @@
+:root {
+  --color-secondary: #222222;
+  --color-primary: #f5f5f5;
+
+  --color-font-primary: #333333;
+  --color-font-white: #fafafa;
+  --color-font-grey: #a5a5a5;
+
+  --color-buttons: #327fc7;
+
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-800: 800;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin btn-left-side($width, $bg-color) {
+  width: $width;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  color: var(--color-font-white);
+  background-color: $bg-color;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+@mixin btn-right-side($width, $bg-color) {
+  width: $width;
+  background-color: $bg-color;
+  padding: 0.9rem 1.5rem;
+  font-size: 1.5rem;
+  border: 1px solid #dddddd;
+  border-left: none;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+@mixin org-page-h2 {
+  font-size: 3rem;
+  font-weight: var(--fw-500);
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+}
+
+@mixin org-page-p {
+  font-weight: var(--fw-500);
+  margin-bottom: 3rem;
+}
+
+@mixin org-page-img {
+  border: 1px solid grey;
+
+  border-radius: 1rem;
+  margin-bottom: 5rem;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.4;
+  font-size: 1.6rem;
+  color: var(--color-font-primary);
+  background-color: var(--color-primary);
+}
+
+.header {
+  height: 68rem;
+  width: 100vw;
+  background-color: var(--color-secondary);
+}
+
+.main-page {
+  height: 100%;
+  text-align: center;
+  position: relative;
+  position: relative;
+
+  &__logo-img {
+    height: 4.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3.7rem;
+  }
+
+  &__help {
+    text-decoration: none;
+    color: var(--color-font-grey);
+    background-color: var(--color-font-primary);
+    font-weight: var(--fw-600);
+    font-size: 1.4rem;
+    padding: 0.3rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 200ms ease-in;
+
+    position: absolute;
+    right: 2%;
+    top: 3%;
+
+    &:hover {
+      color: var(--color-font-white);
+    }
+  }
+
+  &__title {
+    font-weight: var(--fw-500);
+    color: var(--color-font-white);
+    font-size: 4.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  &__description {
+    color: var(--color-font-grey);
+    font-weight: var(--fw-500);
+    font-size: 1.7rem;
+
+    & span {
+      color: #c5c5c5;
+      text-decoration: underline;
+      transition: all ease-in;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__slide-img {
+    max-height: 41rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.desc-main {
+  text-align: center;
+
+  &__title {
+    font-size: 4.8rem;
+    font-weight: var(--fw-500);
+    margin-top: 8rem;
+    margin-bottom: 4rem;
+  }
+
+  &__video {
+    margin-bottom: 8rem;
+  }
+
+  &__insp {
+    font-size: 4.8rem;
+    font-weight: var(--fw-500);
+    text-align: center;
+    max-width: 50%;
+    margin: 0 auto;
+    margin-bottom: 3.8rem;
+  }
+
+  &__description {
+    font-size: 2rem;
+    font-weight: var(--fw-500);
+    max-width: 28%;
+    margin: 0 auto;
+    line-height: 2;
+  }
+
+  &__btn-organization {
+    @include btn-left-side(20rem, var(--color-buttons));
+    margin-right: -5px;
+    margin-top: 4.5rem;
+    margin-bottom: 8rem;
+  }
+
+  &__btn-project {
+    @include btn-right-side(12rem, white);
+  }
+}
+
+.tut-box {
+  width: 53%;
+  max-height: 50rem;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid #dddddd;
+  position: relative;
+  margin-bottom: 8rem;
+
+  &__number {
+    background-color: var(--color-buttons);
+    color: var(--color-font-white);
+    padding: 3rem 3rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    font-size: 3.2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: -1.5rem;
+    left: -1.5rem;
+  }
+
+  &--1 {
+    display: flex;
+  }
+
+  &__img {
+    width: 45%;
+    height: auto;
+    border-left: 1px solid #dddddd;
+  }
+
+  &__text {
+    padding: 3rem 2rem;
+
+    h2 {
+      font-size: 3rem;
+      font-weight: var(--fw-500);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    &__first-description {
+      font-weight: var(--fw-500);
+      text-align: center;
+      margin: 0 auto;
+      max-width: 45rem;
+      margin-bottom: 3rem;
+      line-height: 1.8;
+
+      & span {
+        color: var(--color-buttons);
+        transition: all 100ms ease-in;
+
+        &:hover {
+          cursor: pointer;
+          color: #255e94;
+        }
+      }
+    }
+
+    &__second-description {
+      font-weight: var(--fw-400);
+      font-size: 1.3rem;
+      line-height: 1.6;
+      text-align: center;
+      max-width: 48rem;
+      margin: 0 auto;
+    }
+  }
+
+  &--set {
+    max-height: 20rem;
+    text-align: center;
+
+    & h2 {
+      font-weight: var(--fw-500);
+      font-size: 3rem;
+
+      margin-top: 3rem;
+      margin-bottom: 2.9rem;
+    }
+
+    &__terminal-btn {
+      @include btn-left-side(12rem, var(--color-buttons));
+      margin-right: -5px;
+      margin-bottom: 8rem;
+    }
+
+    &__desktop-btn {
+      @include btn-right-side(14rem, white);
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      margin-right: -4px;
+    }
+
+    &__dknow-btn {
+      @include btn-right-side(12rem, white);
+    }
+  }
+
+  &--2,
+  &--3,
+  &--4 {
+    text-align: center;
+
+    & h2 {
+      @include org-page-h2();
+    }
+
+    & p {
+      @include org-page-p();
+    }
+
+    &__img {
+      @include org-page-img();
+    }
+  }
+
+  &--5 {
+    text-align: center;
+
+    & h2 {
+      @include org-page-h2();
+    }
+
+    & p {
+      @include org-page-p();
+    }
+
+    &__checked-btn {
+      border: none;
+      border-radius: 50%;
+      padding: 3rem 3rem;
+      background-color: white;
+      border: 1px solid #dddddd;
+    }
+
+    &__checked-btn-container {
+      border: none;
+      background-color: white;
+      margin-bottom: 5rem;
+      cursor: pointer;
+
+      transition: all 200ms ease-in;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
